@@ -189,12 +189,35 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
-windspeed = prompt("Enter a non-negative integer")
-if (windspeed > 157) {
-  let div5=document.getElementById(hurricane-output)
-  div5.innerHTML=("Windspeed: " + windspeed + "Hurricane Category: Category 5" )
+
+  windspeed = prompt('Please enter a positive integer for your windspeed');
+
+  windspeed = parseInt(windspeed);
+
+  while (windspeed < 0) {
+    windspeed = prompt('Please enter a positive integer for your windspeed');
+    windspeed = parseInt(windspeed);
+  }
+
+
+  while (Number.isInteger(windspeed) == false) {
+    windspeed = prompt('Please enter a positive integer for your windspeed');
+    windspeed = parseInt(windspeed);
+
+  }
+
+
+
+  if (windspeed > 157) {
+    let div5 = document.getElementById("hurricane-output")
+    div5.innerHTML = "Category 5 Hurricane.";
 
 }
+
+  if (windspeed > 130 && windspeed < 156){
+    let div5 = document.getElementById("hurricane-output")
+    div5.innerHTML = "Category 4 Hurricane.";
+  }
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
