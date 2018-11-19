@@ -189,7 +189,12 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
+windspeed = prompt("Enter a non-negative integer")
+if (windspeed > 157) {
+  let div5=document.getElementById(hurricane-output)
+  div5.innerHTML=("Windspeed: " + windspeed + "Hurricane Category: Category 5" )
 
+}
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
