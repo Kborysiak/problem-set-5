@@ -205,19 +205,36 @@ function hurricane() {
     windspeed = parseInt(windspeed);
 
   }
+  console.log(windspeed)
 
 
-
-  if (windspeed > 157) {
-    let div5 = document.getElementById("hurricane-output")
-    div5.innerHTML = "Category 5 Hurricane.";
-
-}
-
-  if (windspeed > 130 && windspeed < 156){
-    let div5 = document.getElementById("hurricane-output")
-    div5.innerHTML = "Category 4 Hurricane.";
+  if(windspeed >= 157) {
+    document.getElementById("hurricane-output").innerHTML = "Category 5 Hurricane."
   }
+
+  if(windspeed >= 130 && windspeed <= 156){
+      document.getElementById("hurricane-output").innerHTML = "Category 4 Hurricane."
+  }
+
+  if (windspeed >= 111 && windspeed < 129)[
+    document.getElementById("hurricane-output").innerHTML = "Category 3 Hurricane."
+  ]
+
+  if (windspeed >= 96 && windspeed < 110){
+    document.getElementById("hurricane-output").innerHTML = "Category 2 Hurricane."
+  }
+
+  if (windspeed >= 74 && windspeed < 95){
+    document.getElementById("hurricane-output").innerHTML = "Category 1 Hurricane."
+  }
+
+  if (windspeed >= 39 && windspeed < 73){
+    document.getElementById("hurricane-output").innerHTML = "Tropical Storm."
+  }
+  if(windspeed < 39){
+    document.getElementById("hurricane-output").innerHTML = "The skies are calm..."
+  }
+
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
