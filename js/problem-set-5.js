@@ -27,6 +27,30 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
+  let hashSymbol = '#';
+    let spaceSymbol = '&nbsp;'
+    let linesN = '';
+    while(true) {
+      height = Number(prompt("Enter An Integer Between 1 And 23"));
+      if(height >= 1 && height <= 23 && Number.isInteger(height)) {
+        for(let a=0; a<height; a++) {
+
+          for(let b=0; b<=(height-2-a);b++) {
+            linesN = linesN + spaceSymbol;
+          }
+
+          for(let c=0; c<=(1+a);c++) {
+            linesN = linesN + hashSymbol;
+          }
+
+          linesN = linesN + "<br>";
+        }
+        let div1=document.getElementById("mario-easy-output")
+        div1.innerHTML="<code>"+linesN+"</code>";
+        break;
+      }
+
+    }
 
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
