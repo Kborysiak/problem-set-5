@@ -101,6 +101,7 @@ function marioAgain() {
           for(let c=0; c<=(1+a);c++) {
             linesN = linesN + hashSymbol;
           }
+          linesN = linesN + spaceSymbol + spaceSymbol;
 
           linesN = linesN + "<br>";
         }
