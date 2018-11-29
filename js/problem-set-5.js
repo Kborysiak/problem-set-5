@@ -209,7 +209,16 @@ function credit() {
 function guess() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
+let attemptsTaken= 0;
+let randomNum = Math.floor(Math.random(1)*1000);
+let guessedNum = false
+let userGuessNum;
+console.log(randomNum)
 
+while(guessedNum == false){
+  userGuessNum= Number(prompt("Enter an Integer based guess between 1 and 1000."))
+
+}
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
@@ -245,9 +254,9 @@ function hurricane() {
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
 
-  windspeed = prompt('Please enter a positive integer for your windspeed');
+  windspeed = Number(prompt('Please enter a positive integer for your windspeed'));
 
-  windspeed = parseInt(windspeed);
+
 
   while (windspeed < 0) {
     windspeed = prompt('Please enter a positive integer for your windspeed');
@@ -264,30 +273,37 @@ function hurricane() {
 
 
   if(windspeed >= 157) {
-    document.getElementById("hurricane-output").innerHTML = "Category 5 Hurricane."
+    let div5=document.getElementById("hurricane-output")
+    div5.innerHTML = "Category 5 Hurricane."
   }
 
   if(windspeed >= 130 && windspeed <= 156){
-      document.getElementById("hurricane-output").innerHTML = "Category 4 Hurricane."
+      let div5=document.getElementById("hurricane-output")
+      div5.innerHTML = "Category 4 Hurricane."
   }
 
-  if (windspeed >= 111 && windspeed < 129)[
-    document.getElementById("hurricane-output").innerHTML = "Category 3 Hurricane."
-  ]
+  if (windspeed >= 111 && windspeed < 129){
+     let div5=document.getElementById("hurricane-output")
+    div5.innerHTML = "Category 3 Hurricane."
+  }
 
   if (windspeed >= 96 && windspeed < 110){
-    document.getElementById("hurricane-output").innerHTML = "Category 2 Hurricane."
+    let div5=document.getElementById("hurricane-output")
+    div5.innerHTML = "Category 2 Hurricane."
   }
 
   if (windspeed >= 74 && windspeed < 95){
-    document.getElementById("hurricane-output").innerHTML = "Category 1 Hurricane."
+    let div5=document.getElementById("hurricane-output")
+    div5.innerHTML = "Category 1 Hurricane."
   }
 
   if (windspeed >= 39 && windspeed < 73){
-    document.getElementById("hurricane-output").innerHTML = "Tropical Storm."
+    let div5=document.getElementById("hurricane-output")
+    div5.innerHTML = "Tropical Storm."
   }
   if(windspeed < 39){
-    document.getElementById("hurricane-output").innerHTML = "The skies are calm..."
+    let div5=document.getElementById("hurricane-output")
+    div5.innerHTML = "The skies are calm..."
   }
 
   ///////////////////////////////// DO NOT MODIFY
