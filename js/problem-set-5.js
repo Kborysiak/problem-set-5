@@ -190,7 +190,7 @@ function credit() {
  *
  * Write a function that generates a random number, and asks the user to
  * try to guess this number. When all is said and done, your function
- * should output the random number and the number of attempts it took the
+ * should output the random number and the number of attemptsTaken it took the
  * user to correctly guess that number. Your function should also provided
  * helpful hints, indicating whether the most recent guess was greater than
  * or less than the target.
@@ -215,12 +215,36 @@ let attemptsTaken= 0;
 let randomNum = Math.floor(Math.random(1)*1000);
 let guessedNum = false
 let userGuessNum;
-console.log(randomNum)
 
-while(guessedNum == false){
-  userGuessNum= Number(prompt("Enter an Integer based guess between 1 and 1000."))
+
+
+while(guessedNum == false) {
+   userGuessNum= Number(prompt("Input Your Guess For An Integer Between 1 And 1000"));
+  if (userGuessNum <= 1000 && userGuessNum >= 1 && Number.isInteger(userGuessNum)) {
+    console.log(randomNum)
+    if(userGuessNum > randomNum) {
+      alert("This attempt was too high!")
+      attemptsTaken+=1;
+    }
+    else if(userGuessNum < randomNum) {
+      alert("This attempt was too low!")
+      attemptsTaken+=1;
+    }
+    else if(userGuessNum == randomNum) {
+      alert("Correct!")
+      attemptsTaken+=1;
+      found = true;
+      div4=document.getElementById("guess-output")
+      div4.innerHTML = "Number: " + randomNum + "<br/>Attempts: " + attemptsTaken;
+      break;
+    }
+  }
+  else {
+    continue;
+  }
 
 }
+
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
