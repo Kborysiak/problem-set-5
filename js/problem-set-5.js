@@ -32,6 +32,7 @@ function mario() {
     let linesN = '';
     while(true) {
       height = Number(prompt("Enter An Integer Between 1 And 23"));
+      console.log(height)
       if(height >= 1 && height <= 23 && Number.isInteger(height)) {
         for(let a=0; a<height; a++) {
 
@@ -91,6 +92,7 @@ function marioAgain() {
     let linesN = '';
     while(true) {
       height = Number(prompt("Enter An Integer Between 1 And 23"));
+      console.log(height)
       if(height >= 1 && height <= 23 && Number.isInteger(height)) {
         for(let a=0; a<height; a++) {
 
