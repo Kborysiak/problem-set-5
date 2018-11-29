@@ -86,7 +86,7 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
-  let hashSymbol = '##';
+  let hashSymbol = '#';
     let spaceSymbol = '&nbsp;'
     let linesN = '';
     while(true) {
@@ -101,7 +101,12 @@ function marioAgain() {
           for(let c=0; c<=(1+a);c++) {
             linesN = linesN + hashSymbol;
           }
-          linesN = linesN + spaceSymbol + spaceSymbol;
+          linesN = linesN + spaceSymbol + spaceSymbol ;
+
+// MIRROR HERE
+          for(let d=0; d<=(1+a); d++){
+            linesN = linesN + hashSymbol
+          }
 
           linesN = linesN + "<br>";
         }
