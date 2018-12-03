@@ -27,9 +27,10 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
-  let hashSymbol = '#';
-    let spaceSymbol = '&nbsp'
-    let linesN = '';
+  // Note to self; can use += to add to variables
+  let hashSymbol = "#";
+    let spaceSymbol = "&nbsp"
+    let linesN = "";
     while(true) {
       height = Number(prompt("Enter An Integer Between 1 And 23"));
       console.log(height)
@@ -48,13 +49,14 @@ function mario() {
         }
         let div1=document.getElementById("mario-easy-output")
         div1.innerHTML="<code>"+linesN+"</code>";
+        console.log(div1)
         break;
       }
 
     }
 
   ////////////////////////// DO NOT MODIFY
-  check('mario', height); // DO NOT MODIFY
+  check("mario", height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
 }
 
@@ -87,9 +89,9 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
-  let hashSymbol = '#';
-    let spaceSymbol = '&nbsp;'
-    let linesN = '';
+  let hashSymbol = "#";
+    let spaceSymbol = "&nbsp;"
+    let linesN = "";
     while(true) {
       height = Number(prompt("Enter An Integer Between 1 And 23"));
       console.log(height)
@@ -112,8 +114,10 @@ function marioAgain() {
 
           linesN = linesN + "<br>";
         }
+//code element required for input
         let div2=document.getElementById("mario-hard-output")
         div2.innerHTML="<code>"+linesN+"</code>";
+        console.log(div2)
         break;
       }
 
@@ -121,7 +125,7 @@ function marioAgain() {
 
 
   //////////////////////////////// DO NOT MODIFY
-  check('mario-again', height); // DO NOT MODIFY
+  check("mario-again", height); // DO NOT MODIFY
   //////////////////////////////// DO NOT MODIFY
 }
 
@@ -135,11 +139,11 @@ function marioAgain() {
  *   - a Mastercard image (provided)
  *   - a Visa image (provided)
  *
- * We'll use Luhn's algorithm to determine the validity of a credit card
+ * We"ll use Luhn"s algorithm to determine the validity of a credit card
  * number. Review the steps of the algorithm below.
  *
  *   0. Multiply every other digit by 2, starting with the number’s
- *      second-to-last digit, and then add those products' digits together.
+ *      second-to-last digit, and then add those products" digits together.
  *   1. Add the sum to the sum of the digits that weren’t multiplied by 2.
  *   2. If the total’s last digit is 0 (or, put more formally, if the total
  *      modulo 10 is congruent to 0), the number is valid!
@@ -174,14 +178,14 @@ function credit() {
   // WRITE YOUR EXERCISE 3 CODE HERE
 
   /*
-   * NOTE: After reading in the card number and storing it in the 'card'
+   * NOTE: After reading in the card number and storing it in the "card"
    *       variable, do not modify it. If you find it necessary to manipulate
    *       this value, you will need to create a second variable to serve
-   *       as a copy of the 'card' variable.
+   *       as a copy of the "card" variable.
    */
 
   ///////////////////////// DO NOT MODIFY
-  check('credit', card); // DO NOT MODIFY
+  check("credit", card); // DO NOT MODIFY
   ///////////////////////// DO NOT MODIFY
 }
 
@@ -212,25 +216,25 @@ function guess() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
 let attemptsTaken= 0;
-let randomNum = Math.floor(Math.random(1)*1000);
 let guessedNum = false
 let userGuessNum;
+let randomNum = Math.floor(Math.random(1)*1000);
 
 
 
 while(guessedNum == false) {
-   userGuessNum= Number(prompt("Input Your Guess For An Integer Between 1 And 1000"));
+   userGuessNum= Number(prompt("Input an integer based guess that is between 1 and 1000!"));
   if (userGuessNum <= 1000 && userGuessNum >= 1 && Number.isInteger(userGuessNum)) {
     console.log(randomNum)
     if(userGuessNum > randomNum) {
       alert("This attempt was too high!")
       attemptsTaken+=1;
     }
-    else if(userGuessNum < randomNum) {
+    if(userGuessNum < randomNum) {
       alert("This attempt was too low!")
       attemptsTaken+=1;
     }
-    else if(userGuessNum == randomNum) {
+   if(userGuessNum == randomNum) {
       alert("Correct!")
       attemptsTaken+=1;
       found = true;
@@ -239,14 +243,12 @@ while(guessedNum == false) {
       break;
     }
   }
-  else {
-    continue;
-  }
+  
 
 }
 
   ////////////////// DO NOT MODIFY
-  check('guess'); // DO NOT MODIFY
+  check("guess"); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
 }
 
@@ -254,7 +256,7 @@ while(guessedNum == false) {
  * Hurricane. 5 points.
  *
  * Write a function that prompts the user to enter a windspeed, and prints
- * the hurricane category (if applicable) for that windspeed. We'll be
+ * the hurricane category (if applicable) for that windspeed. We"ll be
  * using the Saffir-Simpson scale, shown below in MPH.
  *   - Category 5: 157+
  *   - Category 4: 130-156
@@ -280,24 +282,17 @@ function hurricane() {
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
 
-  windspeed = Number(prompt('Please enter a positive integer for your windspeed'));
-
-
-
+  windspeed = Number(prompt("Please enter a positive integer for your windspeed"));
+  //legible break
   while (windspeed < 0) {
-    windspeed = prompt('Please enter a positive integer for your windspeed');
-    windspeed = parseInt(windspeed);
+    windspeed = Number(prompt("Please enter a positive integer for your windspeed"));
   }
-
 
   while (Number.isInteger(windspeed) == false) {
-    windspeed = prompt('Please enter a positive integer for your windspeed');
-    windspeed = parseInt(windspeed);
-
+    windspeed = Number(prompt("Please enter a positive integer for your windspeed"));
   }
   console.log(windspeed)
-
-
+//legible break
   if(windspeed >= 157) {
     let div5=document.getElementById("hurricane-output")
     div5.innerHTML = "Category 5 Hurricane."
@@ -333,7 +328,7 @@ function hurricane() {
   }
 
   ///////////////////////////////// DO NOT MODIFY
-  check('hurricane', windspeed); // DO NOT MODIFY
+  check("hurricane", windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
 }
 
@@ -363,12 +358,12 @@ function gymnastics() {
   /////////////////// DO NOT MODIFY
 
   /*
-   * NOTE: The 'total' variable should be representative of the sum of all
-   *       six of the judges' scores.
+   * NOTE: The "total" variable should be representative of the sum of all
+   *       six of the judges" scores.
    */
 
   /*
-   * NOTE: You need to add each score (valid or not) to the 'scores' variable.
+   * NOTE: You need to add each score (valid or not) to the "scores" variable.
    *       To do this, use the following syntax:
    *
    *       scores.push(firstScore);   // your variable names for your scores
@@ -376,7 +371,7 @@ function gymnastics() {
    */
 
   /////////////////////////////// DO NOT MODIFY
-  check('gymnastics', scores); // DO NOT MODIFY
+  check("gymnastics", scores); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
 }
 
@@ -386,7 +381,7 @@ function gymnastics() {
  * Write a function that prompts the user to enter test, quiz, and homework
  * grades for the marking period. Users can enter as many grades of each
  * category, entering -1 to signal they are finished. Your function should
- * output the user's final grade, where tests, quizzes, and homework are
+ * output the user"s final grade, where tests, quizzes, and homework are
  * weighted at 60%, 30%, and 10%, respectively.
  *
  * Grades must be real numbers in the range [0.0, 100.0], and users should
@@ -410,7 +405,7 @@ function reportCard() {
   ///////////////////////// DO NOT MODIFY
 
   /*
-   * NOTE: The 'testTotal', 'quizTotal', and 'homeworkTotal' variables
+   * NOTE: The "testTotal", "quizTotal", and "homeworkTotal" variables
    *       should be representative of the sum of the test scores, quiz
    *       scores, and homework scores the user enters, respectively.
    */
@@ -422,7 +417,7 @@ function reportCard() {
   ///////////////////// DO NOT MODIFY
 
   /*
-   * NOTE: The 'tests', 'quizzes', and 'homeworks' variables should be
+   * NOTE: The "tests", "quizzes", and "homeworks" variables should be
    *       representative of the number of tests, quizzes, and homework
    *       grades the user enters, respectively.
    */
@@ -432,9 +427,9 @@ function reportCard() {
     let testAverage;
     let quizAverage;
     let homeworkAverage;
-    let totalAverage;
+    let finalGradeAverage;
 
-    testScore = prompt('Please enter a positive number between 1 and 100 for your test score. Enter -1 if you have entered all of your scores.');
+    testScore = prompt("Enter an integer between 1 and 100 for your testscore. Continue until all your scores are inputted, once all scores are inputted enter -1. ");
    while (testScore) {
      testScore = parseFloat(testScore);
 
@@ -449,9 +444,9 @@ else if(testScore <= 100.00 && 0.0 <= testScore)
   }
   else{
   }
-  testScore = prompt('Please enter a positive number between 1 and 100 for your test score. Enter -1 if you have entered all of your scores.')
+  testScore = prompt("Enter an integer between 1 and 100 for your testscore. Continue until all your scores are inputted, once all scores are inputted enter -1. ")
 }
-quizScore = prompt('Please enter a positive number between 1 and 100 for your quiz score. Enter -1 if you have entered all of your scores.');
+quizScore = prompt("Enter an integer between 1 and 100 for your quizscore. Continue until all your scores are inputted, once all scores are inputted enter -1. ");
 while (quizScore) {
   quizScore = parseFloat(quizScore);
 
@@ -466,10 +461,10 @@ else if(quizScore <= 100.00 && 0.0 <= quizScore)
 }
 else{
 }
-quizScore = prompt('Please enter a positive number between 1 and 100 for your quiz score. Enter -1 if you have entered all of your scores.')
+quizScore = prompt("Enter an integer between 1 and 100 for your quizscore. Continue until all your scores are inputted, once all scores are inputted enter -1. ")
 }
 
-homeWorkscore = prompt('Please enter a positive number between 1 and 100 for your homework score. Enter -1 if you have entered all of your scores.');
+homeWorkscore = prompt("Enter an integer between 1 and 100 for your homeworkscore. Continue until all your scores are inputted, once all scores are inputted enter -1. ");
 while (homeWorkscore) {
   homeWorkscore = parseFloat(homeWorkscore);
 
@@ -484,20 +479,27 @@ else if(homeWorkscore <= 100.00 && 0.0 <= homeWorkscore)
 }
 else{
 }
-homeWorkscore = prompt('Please enter a positive number between 1 and 100 for your homework score. Enter -1 if you have entered all of your scores.')
+homeWorkscore = prompt("Enter an integer between 1 and 100 for your homeworkscore. Continue until all your scores are inputted, once all scores are inputted enter -1. ")
 }
 
 testAverage = testTotal/tests;
 quizAverage = quizTotal/quizzes;
 homeworkAverage = homeworkTotal/homeworks;
-totalAverage = (testAverage * 0.6) + (quizAverage * 0.3) + (homeworkAverage * 0.1);
+finalGradeAverage = (testAverage * 0.6) + (quizAverage * 0.3) + (homeworkAverage * 0.1);
 
+console.log(homeWorkscore)
+console.log(quizScore)
+console.log(testScore)
+console.log(testAverage)
+console.log(quizAverage)
+console.log(homeworkAverage)
+console.log(finalGradeAverage)
 let div7=document.getElementById("report-card-output")
-div7.innerHTML = "Tests: " + testAverage.toFixed(2) + "</br>Quizzes: " + quizAverage.toFixed(2) + "</br>Homework: " + homeworkAverage.toFixed(2) + "</br>Grade: " + totalAverage.toFixed(2);
+div7.innerHTML = "Tests: " + testAverage.toFixed(2) + "</br>Quizzes: " + quizAverage.toFixed(2) + "</br>Homework: " + homeworkAverage.toFixed(2) + "</br>Grade: " + finalGradeAverage.toFixed(2);
 
 
   /////////////////////// DO NOT MODIFY
-  check('report-card', // DO NOT MODIFY
+  check("report-card", // DO NOT MODIFY
     testTotal, ////////// DO NOT MODIFY
     tests, ////////////// DO NOT MODIFY
     quizTotal, ////////// DO NOT MODIFY
