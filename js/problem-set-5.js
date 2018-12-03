@@ -14,7 +14,7 @@
  * be continuously re-prompted until they comply with this restriction.
  *
  * As always, certain portions of the starter code are critical to the
- * the feedback script. Please do not modify these sections. They are
+ * the feedbackscript. Please do not modify these sections. They are
  * clearly marked.
  *
  * All output should be displayed on the page, not printed to the console.
@@ -163,7 +163,7 @@ function marioAgain() {
  * re-prompted until they comply with this restriction.
  *
  * As always, certain portions of the starter code are critical to the
- * the feedback script. Please do not modify these sections. They are
+ * the feedbackscript. Please do not modify these sections. They are
  * clearly marked.
  *
  * All output should be displayed on the page, not printed to the console.
@@ -176,7 +176,58 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
+  let firstSum = 0;
+    let secondSum = 0;
+    while (true){
+      card = prompt("Enter your credit card number: ");
+      if (Number.isInteger(Number(card))){
+        break;
+      }
+      if(card === null){
+        break;
+      }
+    }
 
+    if (card !== null) {
+      for(let aCard= card.length-2; aCard>= 0; aCard-=2) {
+        let num = Number(card[aCard]) * 2;
+        let numCardString = num.toString();
+        let numCardSum = 0;
+        for (let bCard= 0 ; bCard< numCardString.length; bCard++){
+          numCardSum = numCardSum + Number(numCardString[bCard]);
+        }
+        firstSum = numCardSum + firstSum;
+        console.log(firstSum);
+      }
+
+      for(let cCard= card.length-1; cCard>= 0;cCard-=2){
+        secondSum = secondSum + Number(card[cCard])
+      }
+
+      console.log(secondSum);
+
+      if (card.length == 15 && (card[0] == 3 &&(card[1] == 7 || card[1] == 4)) && (firstSum + secondSum )% 10 == 0){
+        let div3=document.getElementById("credit-output")
+        div3.innerHTML="<img src ='./images/amex.png'/>";
+      }
+      else if ((card.length == 13 || card.length == 16) && card[0] == 4 && (firstSum + secondSum) % 10 == 0){
+        let div3=document.getElementById("credit-output")
+        div3.innerHTML="<img src ='./images/visa.png'/>";
+      }
+      else if (card.length == 16 && (card[0] == 5 && (card[1] == 1 || card[1] == 2 || card[1] == 4 || card[1] == 5)) && (firstSum + secondSum) % 10 == 0){
+        let div3=document.getElementById("credit-output")
+        div3.innerHTML="<img src ='./images/mastercard.png'/>";
+      }
+      else {
+        let div3=document.getElementById("credit-output")
+        div3.innerHTML="<img src ='./images/invalid.png'/>";
+      }
+
+      card=Number(card);
+    } else {
+      let div3=document.getElementById("credit-output")
+      div3.innerHTML = "";
+    }
   /*
    * NOTE: After reading in the card number and storing it in the "card"
    *       variable, do not modify it. If you find it necessary to manipulate
@@ -194,7 +245,7 @@ function credit() {
  *
  * Write a function that generates a random number, and asks the user to
  * try to guess this number. When all is said and done, your function
- * should output the random number and the number of attemptsTaken it took the
+ * should output the random number and the number of attemptsTaken it toocCardthe
  * user to correctly guess that number. Your function should also provided
  * helpful hints, indicating whether the most recent guess was greater than
  * or less than the target.
@@ -206,7 +257,7 @@ function credit() {
  * recorded.
  *
  * As always, certain portions of the starter code are critical to the
- * the feedback script. Please do not modify these sections. They are
+ * the feedbackscript. Please do not modify these sections. They are
  * clearly marked.
  *
  * All output should be displayed on the page, not printed to the console.
@@ -243,7 +294,7 @@ while(guessedNum == false) {
       break;
     }
   }
-  
+
 
 }
 
@@ -270,7 +321,7 @@ while(guessedNum == false) {
  * restriction.
  *
  * As always, certain portions of the starter code are critical to the
- * the feedback script. Please do not modify these sections. They are
+ * the feedback and script. Please do not modify these sections. They are
  * clearly marked.
  *
  * All output should be displayed on the page, not printed to the console.
@@ -344,7 +395,7 @@ function hurricane() {
  * be continuously re-prompted until they comply with this restriction.
  *
  * As always, certain portions of the starter code are critical to the
- * the feedback script. Please do not modify these sections. They are
+ * the feedbackscript. Please do not modify these sections. They are
  * clearly marked.
  *
  * All output should be displayed on the page, not printed to the console.
@@ -369,7 +420,46 @@ function gymnastics() {
    *       scores.push(firstScore);   // your variable names for your scores
    *       scores.push(secondScore);  // will likely be different than mine
    */
+   do{
+     scoreNum1 = Number(prompt("Please enter a score between 0 and 10"));
 
+   } while (scoreNum1 < 0.0 || scoreNum1 > 10.0|| !Number.isInteger(scoreNum1)){
+   scores.push(scoreNum1);
+}
+   do{
+     scoreNum2 = Number(prompt("Please enter a score between 0 and 10"));
+
+   } while (scoreNum2 < 0.0 || scoreNum2 > 10.0|| !Number.isInteger(scoreNum2)){
+   scores.push(scoreNum2);
+}
+   do{
+     scoreNum3 = Number(prompt("Please enter a score between 0 and 10"));
+
+   } while (scoreNum3 < 0.0 || scoreNum3 > 10.0|| !Number.isInteger(scoreNum3)){
+   scores.push(scoreNum3);
+}
+   do{
+     scoreNum4 = Number(prompt("Please enter a score between 0 and 10"));
+
+   } while (scoreNum4 < 0.0 || scoreNum4 > 10.0|| !Number.isInteger(scoreNum4)){
+   scores.push(scoreNum4);
+}
+   do{
+     scoreNum5 = Number(prompt("Please enter a score between 0 and 10"));
+
+   } while (scoreNum5 < 0.0 || scoreNum5 > 10.0|| !Number.isInteger(scoreNum5)){
+   scores.push(scoreNum5);
+}
+   do{
+     scoreNum6 = Number(prompt("Please enter a score between 0 and 10"));
+
+   } while (scoreNum6 < 0.0 || scoreNum6 > 10.0|| !Number.isInteger(scoreNum6)){
+   scores.push(scoreNum6);
+}
+   let totalScore = Number(scoreNum1) + Number(scoreNum2) + Number(scoreNum3) + Number(scoreNum4) + Number(scoreNum5) + Number(scoreNum6);
+   let averageScore = (totalScore - Math.max(scoreNum1, scoreNum2, scoreNum3, scoreNum4, scoreNum5, scoreNum6) - Math.min(scoreNum1, scoreNum2, scoreNum3, scoreNum4, scoreNum5, scoreNum6)) / 4;
+   let div6 = document.getElementById('gymnastics-output');
+   div6.innerHTML = "Discarded: " + Math.min(scoreNum1, scoreNum2, scoreNum3, scoreNum4, scoreNum5, scoreNum6) + ', ' + Math.max(scoreNum1, scoreNum2, scoreNum3, scoreNum4, scoreNum5, scoreNum6) + '<br />Score: ' + averageScore.toFixed(2);
   /////////////////////////////// DO NOT MODIFY
   check("gymnastics", scores); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
@@ -381,7 +471,7 @@ function gymnastics() {
  * Write a function that prompts the user to enter test, quiz, and homework
  * grades for the marking period. Users can enter as many grades of each
  * category, entering -1 to signal they are finished. Your function should
- * output the user"s final grade, where tests, quizzes, and homework are
+ * output the user"s final grade, where tests, quizzes, and homeworcCardare
  * weighted at 60%, 30%, and 10%, respectively.
  *
  * Grades must be real numbers in the range [0.0, 100.0], and users should
@@ -390,7 +480,7 @@ function gymnastics() {
  * for that category.
  *
  * As always, certain portions of the starter code are critical to the
- * the feedback script. Please do not modify these sections. They are
+ * the feedbaccCardscript. Please do not modify these sections. They are
  * clearly marked.
  *
  * All output should be displayed on the page, not printed to the console.
@@ -407,7 +497,7 @@ function reportCard() {
   /*
    * NOTE: The "testTotal", "quizTotal", and "homeworkTotal" variables
    *       should be representative of the sum of the test scores, quiz
-   *       scores, and homework scores the user enters, respectively.
+   *       scores, and homeworcCardscores the user enters, respectively.
    */
 
   ///////////////////// DO NOT MODIFY
